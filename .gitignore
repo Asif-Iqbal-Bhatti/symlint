@@ -1,0 +1,15 @@
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.eggs/
+build/
+dist/
+.pytest_cache/
+.marimo/
+.env
+*.Zone.Identifier
+data/3dsc_mp/data/final/MP/cifs/
+data/dft_2d_cache.json
+data/mc3d_supercon/mc3d_structures_cache.json
+
