@@ -286,7 +286,7 @@ def _(candidates_df, conflicts_df, mo, module_a_df, module_d_df, new_cand_df, ro
     avail_conflict_cols = [c for c in display_cols if c in filtered_conflicts.columns]
     avail_cand_cols = [c for c in display_cols if c in candidates_df.columns]
 
-    mo.tabs(
+    mo.ui.tabs(
         {
             f"CONFLICT ({len(filtered_conflicts):,})": mo.ui.table(
                 filtered_conflicts[avail_conflict_cols].head(500),
