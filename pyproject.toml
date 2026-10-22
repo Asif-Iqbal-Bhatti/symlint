@@ -1,0 +1,55 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "symlint"
+version = "0.1.0"
+description = "Physics guardrail for AI driven materials discovery: exact filling-enforced gaplessness checks across the 230 space groups"
+readme = "README.md"
+requires-python = ">=3.10"
+license = {text = "MIT"}
+authors = [{name = "Asif Iqbal Bhatti"}]
+keywords = ["materials science", "space groups", "band theory", "crystal symmetry", "MCP", "AI agents"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Topic :: Scientific/Engineering :: Physics",
+    "Topic :: Scientific/Engineering :: Chemistry",
+]
+dependencies = [
+    "numpy>=1.24",
+    "spglib>=2.0",
+    "ase>=3.22",
+    "pymatgen>=2023.1.1",
+    "pyxtal>=0.6.0",
+    "pandas>=2.0",
+    "pyarrow>=12.0",
+    "matplotlib>=3.7",
+    "tqdm>=4.65",
+    "mcp>=1.0",
+]
+
+[project.optional-dependencies]
+# Interactive browser demo
+demo = ["marimo>=0.6.0"]
+# Download and audit public databases (JARVIS, matbench, MC3D)
+data = ["jarvis-tools>=2023.5.0", "matminer>=0.9", "scipy>=1.10", "requests>=2.28"]
+# Module A: pretrained ALIGNN band gap models
+ml = ["alignn>=2026.8.11", "jarvis-tools>=2023.5.0", "requests>=2.28"]
+# Step 8: MLIP relaxation and phonons (GPU recommended; GRACE needs TensorFlow)
+mlip = ["torch", "mace-torch>=0.3.16", "tensorpotential>=0.6", "phonopy>=2.20", "seekpath>=2.0"]
+dev = ["pytest>=7.0"]
+all = ["symlint[demo,data,dev]"]
+
+[project.scripts]
+symlint = "symlint.cli:main"
+symlint-mcp = "symlint.mcp_server:main"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["symlint*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-v"
