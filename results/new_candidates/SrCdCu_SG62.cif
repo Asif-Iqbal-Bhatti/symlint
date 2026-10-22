@@ -1,0 +1,37 @@
+data_image0
+_chemical_formula_structural       Sr4Cd4Cu4
+_chemical_formula_sum              "Sr4 Cd4 Cu4"
+_cell_length_a       7.647136331672129
+_cell_length_b       4.617636438869787
+_cell_length_c       8.574690726146205
+_cell_angle_alpha    90.0
+_cell_angle_beta     90.0
+_cell_angle_gamma    90.0
+
+_space_group_name_H-M_alt    "P 1"
+_space_group_IT_number       1
+
+loop_
+  _space_group_symop_operation_xyz
+  'x, y, z'
+
+loop_
+  _atom_site_type_symbol
+  _atom_site_label
+  _atom_site_symmetry_multiplicity
+  _atom_site_fract_x
+  _atom_site_fract_y
+  _atom_site_fract_z
+  _atom_site_occupancy
+  Sr  Sr1       1.0  0.9772992596247616  0.75  0.6853226188462834  1.0000
+  Sr  Sr2       1.0  0.4772992596247615  0.75  0.8146773811537164  1.0000
+  Sr  Sr3       1.0  0.022700740375238688  0.25  0.3146773811537159  1.0000
+  Sr  Sr4       1.0  0.5227007403752388  0.25  0.18532261884628393  1.0000
+  Cd  Cd1       1.0  0.8451262292319001  0.75  0.06581121630376306  1.0000
+  Cd  Cd2       1.0  0.34512622923190023  0.75  0.43418878369623687  1.0000
+  Cd  Cd3       1.0  0.15487377076809974  0.25  0.9341887836962366  1.0000
+  Cd  Cd4       1.0  0.6548737707680998  0.25  0.5658112163037625  1.0000
+  Cu  Cu1       1.0  0.715342255024012  0.75  0.38686533102185516  1.0000
+  Cu  Cu2       1.0  0.21534225502401136  0.75  0.11313466897814457  1.0000
+  Cu  Cu3       1.0  0.28465774497598867  0.25  0.6131346689781446  1.0000
+  Cu  Cu4       1.0  0.7846577449759883  0.25  0.8868653310218554  1.0000

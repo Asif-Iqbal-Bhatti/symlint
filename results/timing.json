@@ -1,0 +1,29 @@
+{
+  "description": "Wall time of symlint.check.check_structure (symprec 1e-3 and 0.1 passes), warm cache",
+  "n_structures": 19,
+  "repeats_per_structure": 50,
+  "median_ms": 1.684,
+  "min_ms": 1.273,
+  "max_ms": 34.302,
+  "per_structure_ms": {
+    "NaCl_rocksalt.cif": 34.302,
+    "Na_bcc.cif": 7.812,
+    "Si_diamond.cif": 16.71,
+    "SrIrO3_Pbnm_exp.cif": 1.781,
+    "SrIrO3_Pnma_mp1105160.cif": 1.853,
+    "CaCdAg_SG62.cif": 1.691,
+    "CaCdCu_SG62.cif": 1.684,
+    "CaCuGe2_SG63.cif": 1.362,
+    "CaZnAg_SG62.cif": 1.66,
+    "CaZnAu_SG62.cif": 1.694,
+    "CaZnCu_SG62.cif": 1.654,
+    "CaZnP_SG194.cif": 3.264,
+    "SrCdAg_SG62.cif": 1.656,
+    "SrCdCu_SG62.cif": 1.616,
+    "SrCuGe2_SG63.cif": 1.273,
+    "SrZnAg_SG62.cif": 1.659,
+    "SrZnAu_SG62.cif": 1.684,
+    "SrZnCu_SG62.cif": 1.671,
+    "SrZnP_SG194.cif": 3.229
+  }
+}

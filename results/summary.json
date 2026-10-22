@@ -1,0 +1,665 @@
+{
+  "dataset": "JARVIS-DFT dft_3d",
+  "total_entries": 93902,
+  "spglib_success_entries": 93902,
+  "spglib_error_entries": 0,
+  "parameters": {
+    "symprec": 0.001,
+    "alt_symprec": 0.1,
+    "mode": "soc",
+    "mag_threshold_muB": 0.05,
+    "gap_threshold_eV": 0.1
+  },
+  "magnetic_breakdown": {
+    "nonmagnetic": 70658,
+    "magnetic": 21519,
+    "unknown_magmom_na": 1725
+  },
+  "verdict_counts_all": {
+    "allowed": 58320,
+    "symmetry_enforced": 7974,
+    "odd_filling": 27608,
+    "error": 0
+  },
+  "verdict_counts_nonmagnetic": {
+    "allowed": 45628,
+    "symmetry_enforced": 4574,
+    "odd_filling": 20456,
+    "error": 0
+  },
+  "verdict_counts_magnetic": {
+    "allowed": 11379,
+    "symmetry_enforced": 3130,
+    "odd_filling": 7010,
+    "error": 0
+  },
+  "flags": {
+    "CONFLICT": 992,
+    "CONFLICT_symmetry_enforced": 495,
+    "CONFLICT_odd_filling": 497,
+    "CONFLICT_optb88_insulating": 787,
+    "CONFLICT_mbj_insulating": 497,
+    "CONFLICT_both_optb88_and_mbj_insulating": 292,
+    "CONFLICT_symprec_robust": 991,
+    "CONFLICT_db_spg_agrees": 941,
+    "CONFLICT_with_f_elements": 817,
+    "CONFLICT_without_f_elements": 175,
+    "MAGNETIC_EXCEPTION": 2246,
+    "MAGNETIC_EXCEPTION_symmetry_enforced": 1035,
+    "MAGNETIC_EXCEPTION_odd_filling": 1211,
+    "CANDIDATE": 4079,
+    "CANDIDATE_on_hull_ehull_le_0_025": 299,
+    "SG_MISMATCH": 6575
+  },
+  "flag_categories": {
+    "A_CONFLICT_total": 992,
+    "A_CONFLICT_symmetry_enforced": 495,
+    "A_CONFLICT_odd_filling": 497,
+    "A_CONFLICT_optb88_insulating": 787,
+    "A_CONFLICT_mbj_insulating": 497,
+    "A_CONFLICT_both_optb88_and_mbj_insulating": 292,
+    "A_CONFLICT_symprec_robust": 991,
+    "A_CONFLICT_db_spg_agrees": 941,
+    "A_CONFLICT_with_f_elements": 817,
+    "A_CONFLICT_without_f_elements": 175,
+    "A_CONFLICT_without_f_elements_symmetry_enforced": 21,
+    "A_CONFLICT_without_f_elements_odd_filling": 154,
+    "B_MAGNETIC_EXCEPTION_total": 2246,
+    "B_MAGNETIC_EXCEPTION_symmetry_enforced": 1035,
+    "B_MAGNETIC_EXCEPTION_odd_filling": 1211,
+    "C_CANDIDATES_symmetry_enforced_gapless_nonmagnetic": 4079,
+    "C_CANDIDATES_on_hull_ehull_le_0_025": 299,
+    "D_SPG_MISMATCH_db_vs_spglib_1e-3": 6575,
+    "symprec_sensitive_1e-3_vs_0_1": 7711,
+    "verdict_sensitive_1e-3_vs_0_1": 383
+  },
+  "unknown_magmom_insulating_forbidden": 48,
+  "moduleC_correlated_insulators": {
+    "dataset": "matbench_expt_gap matched to lowest-ehull JARVIS dft_3d polymorph",
+    "approximation_note": "matbench_expt_gap provides composition only; each formula is matched to the lowest-ehull JARVIS dft_3d structure of the same reduced formula.",
+    "total_expt_rows": 4604,
+    "unique_expt_compositions": 4604,
+    "matched_to_jarvis_compositions": 2608,
+    "matched_expt_insulators_gap_gt_0_1": 763,
+    "expt_insulators_forbidden_total": 67,
+    "expt_insulators_forbidden_dft_magnetic": 14,
+    "expt_insulators_forbidden_dft_nonmagnetic": 52,
+    "nonmagnetic_forbidden_symmetry_enforced": 24,
+    "nonmagnetic_forbidden_odd_filling": 28,
+    "nonmagnetic_forbidden_without_f_elements": 17,
+    "nonmagnetic_forbidden_symmetry_enforced_without_f_elements": 3,
+    "nonmagnetic_violating_pnas2015_interacting_bound": 52
+  },
+  "module_e_extensions": {
+    "dataset_2d": "JARVIS dft_2d (3D periodic stacked-slab approximation with vacuum; proper 80 layer-group audit is future work)",
+    "total_dft2d_entries": 1103,
+    "nonmagnetic_dft2d_entries": 890,
+    "magnetic_dft2d_entries": 213,
+    "unknown_mag_dft2d_entries": 0,
+    "verdict_counts_all_2d": {
+      "allowed": 868,
+      "odd_filling": 166,
+      "symmetry_enforced": 69
+    },
+    "verdict_counts_nonmagnetic_2d": {
+      "allowed": 745,
+      "odd_filling": 104,
+      "symmetry_enforced": 41
+    },
+    "flag_counts_2d": {
+      "CONFLICT": 22,
+      "CONFLICT_symmetry_enforced": 15,
+      "CONFLICT_odd_filling": 7,
+      "MAGNETIC_EXCEPTION": 30,
+      "CANDIDATE": 26,
+      "SG_MISMATCH": 104
+    },
+    "magnetic_space_groups_motivation": {
+      "reference": "H. Watanabe, H. C. Po, and A. Vishwanath, Sci. Adv. 4, eaat8685 (2018)",
+      "jarvis_dft3d_magnetic_excluded_total": 21519,
+      "jarvis_dft3d_magnetic_exceptions_insulating_at_230sg_forbidden": 2246,
+      "jarvis_dft2d_magnetic_excluded_total": 213,
+      "jarvis_dft2d_magnetic_exceptions": 30
+    }
+  },
+  "module_d_3dsc_superconductors": {
+    "dataset": "3DSC_MP (Sommer et al., Sci. Data 10, 816 (2023), https://github.com/aimat-lab/3DSC)",
+    "total_3dsc_mp_entries": 5773,
+    "unique_mp_host_structures": 2715,
+    "stoichiometric_ordered_entries": 2336,
+    "stoichiometric_superconductors_tc_gt_0": 1215,
+    "stoichiometric_all_verdict_counts": {
+      "allowed": 1345,
+      "odd_filling": 532,
+      "symmetry_enforced": 459
+    },
+    "stoichiometric_tc_gt_0_verdict_counts": {
+      "allowed": 646,
+      "odd_filling": 306,
+      "symmetry_enforced": 263
+    },
+    "stoichiometric_tc_gt_0_forced_gapless_count": 569,
+    "stoichiometric_tc_gt_0_forced_gapless_fraction": 0.4683,
+    "stoichiometric_tc_gt_0_symmetry_enforced_fraction": 0.2165,
+    "all_5773_host_lattice_verdict_counts": {
+      "allowed": 3064,
+      "odd_filling": 1660,
+      "symmetry_enforced": 1049
+    },
+    "tc_stats_by_verdict_stoich_tc_gt_0": {
+      "allowed": {
+        "count_tc_gt_0": 646,
+        "mean_tc_K": 5.52,
+        "median_tc_K": 2.56,
+        "iqr_25_K": 1.1,
+        "iqr_75_K": 5.3,
+        "max_tc_K": 95.0
+      },
+      "odd_filling": {
+        "count_tc_gt_0": 306,
+        "mean_tc_K": 7.19,
+        "median_tc_K": 3.01,
+        "iqr_25_K": 1.24,
+        "iqr_75_K": 6.11,
+        "max_tc_K": 132.0
+      },
+      "symmetry_enforced": {
+        "count_tc_gt_0": 263,
+        "mean_tc_K": 3.66,
+        "median_tc_K": 2.33,
+        "iqr_25_K": 1.4,
+        "iqr_75_K": 3.86,
+        "max_tc_K": 85.0
+      }
+    },
+    "nonmagnetic_nonsymmorphic_sc_count": 252,
+    "caveat": "Exploratory analysis; crystal chemistry and structural families correlate with space group."
+  },
+  "step8_mlip_discovery": {
+    "gpu_device": "NVIDIA RTX 2000 Ada Generation Laptop GPU",
+    "primary_mlip": "MACE-MPA-0-medium (mace-torch)",
+    "crosscheck_mlip": "GRACE-2L-OAM (tensorpotential / ICAMS)",
+    "step8a_candidates_evaluated": 15,
+    "step8a_dynamically_stable_mace": 12,
+    "step8a_dynamically_stable_grace": 11,
+    "step8a_dual_model_agreement_count": 14,
+    "step8a_both_models_stable_count": 11,
+    "step8b_robustness_census": {
+      "total_category_c_evaluated": 4079,
+      "surviving_at_least_one_subgroup": 4034,
+      "surviving_all_maximal_subgroups": 52,
+      "elapsed_seconds": 3.1992
+    },
+    "step8c_substitutions_evaluated": 14,
+    "step8c_sg_preserved": 14,
+    "step8c_dynamically_stable_mace": 12,
+    "step8c_dynamically_stable_grace": 11,
+    "step8c_dual_model_agreement_count": 13,
+    "step8c_both_models_stable": 11,
+    "step8c_stable_and_ehull_le_0_05": 11,
+    "step8c_on_mlip_hull_ehull_eq_0": 11,
+    "step8c_wyckoff_generated_evaluated": 3,
+    "step8c_wyckoff_dynamically_stable": 1,
+    "step8d_agent_trace_steps": 3,
+    "step8e_vasp_soc_handoff_packages": [
+      "results/dft_handoff/CaZnCu_SG62",
+      "results/dft_handoff/CaZnAg_SG62",
+      "results/dft_handoff/CaZnAu_SG62",
+      "results/dft_handoff/JVASP-109946_Cu3Ge_SG194",
+      "results/dft_handoff/JVASP-15694_CaGa_SG63"
+    ]
+  },
+  "module_a_ml_bandgap_audit": {
+    "models_evaluated": [
+      "alignn-2026.8.11 :: optb88vdw_bandgap (pure-torch ALIGNN 2.0, cutoff=5.0 A, max_neighbors=12)",
+      "alignn-2026.8.11 :: mbj_bandgap (pure-torch ALIGNN 2.0, cutoff=5.0 A, max_neighbors=12)"
+    ],
+    "violation_threshold_eV": 0.1,
+    "total_structures_evaluated": 1963,
+    "total_violations_found": 352,
+    "jarvis_in_distribution_forbidden_all": {
+      "count": 1000,
+      "optb88_violations": 97,
+      "optb88_violation_rate": 0.097,
+      "mbj_violations": 204,
+      "mbj_violation_rate": 0.204,
+      "any_model_violations": 227,
+      "any_model_violation_rate": 0.227,
+      "max_pred_optb88_eV": 6.9064,
+      "max_pred_mbj_eV": 7.2651
+    },
+    "jarvis_in_distribution_symmetry_enforced": {
+      "count": 500,
+      "optb88_violations": 66,
+      "optb88_violation_rate": 0.132,
+      "mbj_violations": 139,
+      "mbj_violation_rate": 0.278,
+      "any_model_violations": 149,
+      "any_model_violation_rate": 0.298,
+      "max_pred_optb88_eV": 6.9064,
+      "max_pred_mbj_eV": 7.2651
+    },
+    "jarvis_in_distribution_odd_filling": {
+      "count": 500,
+      "optb88_violations": 31,
+      "optb88_violation_rate": 0.062,
+      "mbj_violations": 65,
+      "mbj_violation_rate": 0.13,
+      "any_model_violations": 78,
+      "any_model_violation_rate": 0.156,
+      "max_pred_optb88_eV": 4.8552,
+      "max_pred_mbj_eV": 6.9837
+    },
+    "held_out_not_in_jarvis_forbidden_all": {
+      "count": 463,
+      "optb88_violations": 32,
+      "optb88_violation_rate": 0.0691,
+      "mbj_violations": 115,
+      "mbj_violation_rate": 0.2484,
+      "any_model_violations": 125,
+      "any_model_violation_rate": 0.27,
+      "max_pred_optb88_eV": 2.4318,
+      "max_pred_mbj_eV": 4.6409
+    },
+    "held_out_not_in_jarvis_symmetry_enforced": {
+      "count": 248,
+      "optb88_violations": 15,
+      "optb88_violation_rate": 0.0605,
+      "mbj_violations": 69,
+      "mbj_violation_rate": 0.2782,
+      "any_model_violations": 74,
+      "any_model_violation_rate": 0.2984,
+      "max_pred_optb88_eV": 1.9516,
+      "max_pred_mbj_eV": 4.512
+    },
+    "held_out_not_in_jarvis_odd_filling": {
+      "count": 215,
+      "optb88_violations": 17,
+      "optb88_violation_rate": 0.0791,
+      "mbj_violations": 46,
+      "mbj_violation_rate": 0.214,
+      "any_model_violations": 51,
+      "any_model_violation_rate": 0.2372,
+      "max_pred_optb88_eV": 2.4318,
+      "max_pred_mbj_eV": 4.6409
+    },
+    "held_out_step8c_new_candidates": {
+      "count": 14,
+      "optb88_violations": 0,
+      "optb88_violation_rate": 0.0,
+      "mbj_violations": 6,
+      "mbj_violation_rate": 0.4286,
+      "any_model_violations": 6,
+      "any_model_violation_rate": 0.4286,
+      "max_pred_optb88_eV": 0.009,
+      "max_pred_mbj_eV": 1.5982
+    },
+    "guardrail_masking_improvement": {
+      "jarvis_eval_set_size": 1500,
+      "optb88_metal_vs_insulator_accuracy_raw": 0.9067,
+      "optb88_metal_vs_insulator_accuracy_masked": 0.9127,
+      "optb88_mae_raw_eV": 0.188,
+      "optb88_mae_masked_eV": 0.2116,
+      "forbidden_filling_true_metals_count": 1404,
+      "forbidden_metals_accuracy_raw_optb88": 0.9395,
+      "forbidden_metals_accuracy_raw_mbj": 0.807,
+      "forbidden_metals_accuracy_masked": 1.0
+    },
+    "elapsed_seconds": 98.27
+  },
+  "module_d_superconductors": {
+    "primary_dataset": "Bercx et al., PRX Energy 4, 033012 (2025), DOI 10.1103/sb28-fjc9 (MC3D Archive 10.24435/materialscloud:x2-ap)",
+    "mc3d_funnel": {
+      "Table_A_experimental_mc3d": {
+        "total": 10170,
+        "allowed": 6957,
+        "odd_filling": 1979,
+        "symmetry_enforced": 1234,
+        "forced_gapless_total": 3213,
+        "allowed_fraction": 0.6841,
+        "odd_filling_fraction": 0.1946,
+        "symmetry_enforced_fraction": 0.1213,
+        "forced_gapless_fraction": 0.3159,
+        "nonsymmorphic_fraction": 0.395
+      },
+      "Table_B_nonmagnetic_metals": {
+        "total": 4528,
+        "allowed": 2639,
+        "odd_filling": 1115,
+        "symmetry_enforced": 774,
+        "forced_gapless_total": 1889,
+        "allowed_fraction": 0.5828,
+        "odd_filling_fraction": 0.2462,
+        "symmetry_enforced_fraction": 0.1709,
+        "forced_gapless_fraction": 0.4172,
+        "nonsymmorphic_fraction": 0.4353
+      },
+      "Table_C_qe_tc_gt_1K": {
+        "total": 1595,
+        "allowed": 840,
+        "odd_filling": 436,
+        "symmetry_enforced": 319,
+        "forced_gapless_total": 755,
+        "allowed_fraction": 0.5266,
+        "odd_filling_fraction": 0.2734,
+        "symmetry_enforced_fraction": 0.2,
+        "forced_gapless_fraction": 0.4734,
+        "nonsymmorphic_fraction": 0.4288
+      },
+      "Table_D_epw_candidates": {
+        "total": 945,
+        "allowed": 463,
+        "odd_filling": 302,
+        "symmetry_enforced": 180,
+        "forced_gapless_total": 482,
+        "allowed_fraction": 0.4899,
+        "odd_filling_fraction": 0.3196,
+        "symmetry_enforced_fraction": 0.1905,
+        "forced_gapless_fraction": 0.5101,
+        "nonsymmorphic_fraction": 0.3958
+      }
+    },
+    "mc3d_statistical_test_tableB_to_tableC": {
+      "test": "Chi-squared test (symmetry_enforced vs allowed survival from Table B to Table C)",
+      "symmetry_enforced_survival_rate": 0.4121,
+      "allowed_survival_rate": 0.3183,
+      "chi2_statistic": 23.2822,
+      "p_value": 1e-06
+    },
+    "mc3d_highlighted_superconductors": [
+      {
+        "mc3d_id": "mc3d-26974",
+        "formula": "BaB2",
+        "sg_number": 191,
+        "sg_symbol": "P6/mmm",
+        "is_nonsymmorphic": false,
+        "nu": 66,
+        "allowed_rule": "2N",
+        "verdict": "allowed",
+        "in_table_B": true,
+        "in_table_C_tc_gt_1K": true,
+        "in_table_D_epw": true
+      },
+      {
+        "mc3d_id": "mc3d-79663",
+        "formula": "TaRu3C",
+        "sg_number": 221,
+        "sg_symbol": "Pm-3m",
+        "is_nonsymmorphic": false,
+        "nu": 211,
+        "allowed_rule": "2N",
+        "verdict": "odd_filling",
+        "in_table_B": true,
+        "in_table_C_tc_gt_1K": true,
+        "in_table_D_epw": true
+      },
+      {
+        "mc3d_id": "mc3d-22116",
+        "formula": "Nb3Sn",
+        "sg_number": 223,
+        "sg_symbol": "Pm-3n",
+        "is_nonsymmorphic": true,
+        "nu": 346,
+        "allowed_rule": "4N",
+        "verdict": "symmetry_enforced",
+        "in_table_B": true,
+        "in_table_C_tc_gt_1K": true,
+        "in_table_D_epw": true
+      },
+      {
+        "mc3d_id": "mc3d-71925",
+        "formula": "MgB2",
+        "sg_number": 191,
+        "sg_symbol": "P6/mmm",
+        "is_nonsymmorphic": false,
+        "nu": 22,
+        "allowed_rule": "2N",
+        "verdict": "allowed",
+        "in_table_B": true,
+        "in_table_C_tc_gt_1K": true,
+        "in_table_D_epw": true
+      },
+      {
+        "mc3d_id": "mc3d-73924",
+        "formula": "V3Si",
+        "sg_number": 223,
+        "sg_symbol": "Pm-3n",
+        "is_nonsymmorphic": true,
+        "nu": 166,
+        "allowed_rule": "4N",
+        "verdict": "symmetry_enforced",
+        "in_table_B": true,
+        "in_table_C_tc_gt_1K": true,
+        "in_table_D_epw": true
+      },
+      {
+        "mc3d_id": "mc3d-8485",
+        "formula": "V3Si",
+        "sg_number": 229,
+        "sg_symbol": "Im-3m",
+        "is_nonsymmorphic": false,
+        "nu": 83,
+        "allowed_rule": "2N",
+        "verdict": "odd_filling",
+        "in_table_B": true,
+        "in_table_C_tc_gt_1K": true,
+        "in_table_D_epw": true
+      },
+      {
+        "mc3d_id": "mc3d-19517",
+        "formula": "NbN",
+        "sg_number": 194,
+        "sg_symbol": "P6_3/mmc",
+        "is_nonsymmorphic": true,
+        "nu": 96,
+        "allowed_rule": "4N",
+        "verdict": "allowed",
+        "in_table_B": true,
+        "in_table_C_tc_gt_1K": false,
+        "in_table_D_epw": false
+      },
+      {
+        "mc3d_id": "mc3d-31149",
+        "formula": "NbN",
+        "sg_number": 194,
+        "sg_symbol": "P6_3/mmc",
+        "is_nonsymmorphic": true,
+        "nu": 96,
+        "allowed_rule": "4N",
+        "verdict": "allowed",
+        "in_table_B": true,
+        "in_table_C_tc_gt_1K": true,
+        "in_table_D_epw": false
+      },
+      {
+        "mc3d_id": "mc3d-18825",
+        "formula": "NbN",
+        "sg_number": 194,
+        "sg_symbol": "P6_3/mmc",
+        "is_nonsymmorphic": true,
+        "nu": 96,
+        "allowed_rule": "4N",
+        "verdict": "allowed",
+        "in_table_B": true,
+        "in_table_C_tc_gt_1K": true,
+        "in_table_D_epw": false
+      },
+      {
+        "mc3d_id": "mc3d-57335",
+        "formula": "NbN",
+        "sg_number": 221,
+        "sg_symbol": "Pm-3m",
+        "is_nonsymmorphic": false,
+        "nu": 144,
+        "allowed_rule": "2N",
+        "verdict": "allowed",
+        "in_table_B": true,
+        "in_table_C_tc_gt_1K": true,
+        "in_table_D_epw": true
+      },
+      {
+        "mc3d_id": "mc3d-48763",
+        "formula": "NbN",
+        "sg_number": 194,
+        "sg_symbol": "P6_3/mmc",
+        "is_nonsymmorphic": true,
+        "nu": 192,
+        "allowed_rule": "4N",
+        "verdict": "allowed",
+        "in_table_B": true,
+        "in_table_C_tc_gt_1K": false,
+        "in_table_D_epw": false
+      },
+      {
+        "mc3d_id": "mc3d-27852",
+        "formula": "NbN",
+        "sg_number": 194,
+        "sg_symbol": "P6_3/mmc",
+        "is_nonsymmorphic": true,
+        "nu": 192,
+        "allowed_rule": "4N",
+        "verdict": "allowed",
+        "in_table_B": true,
+        "in_table_C_tc_gt_1K": true,
+        "in_table_D_epw": true
+      },
+      {
+        "mc3d_id": "mc3d-12630",
+        "formula": "NbN",
+        "sg_number": 187,
+        "sg_symbol": "P-6m2",
+        "is_nonsymmorphic": false,
+        "nu": 48,
+        "allowed_rule": "2N",
+        "verdict": "allowed",
+        "in_table_B": true,
+        "in_table_C_tc_gt_1K": false,
+        "in_table_D_epw": false
+      },
+      {
+        "mc3d_id": "mc3d-27502",
+        "formula": "NbN",
+        "sg_number": 225,
+        "sg_symbol": "Fm-3m",
+        "is_nonsymmorphic": false,
+        "nu": 48,
+        "allowed_rule": "2N",
+        "verdict": "allowed",
+        "in_table_B": true,
+        "in_table_C_tc_gt_1K": true,
+        "in_table_D_epw": true
+      },
+      {
+        "mc3d_id": "mc3d-70221",
+        "formula": "MoN",
+        "sg_number": 194,
+        "sg_symbol": "P6_3/mmc",
+        "is_nonsymmorphic": true,
+        "nu": 98,
+        "allowed_rule": "4N",
+        "verdict": "symmetry_enforced",
+        "in_table_B": true,
+        "in_table_C_tc_gt_1K": true,
+        "in_table_D_epw": true
+      },
+      {
+        "mc3d_id": "mc3d-15289",
+        "formula": "MoN",
+        "sg_number": 194,
+        "sg_symbol": "P6_3/mmc",
+        "is_nonsymmorphic": true,
+        "nu": 196,
+        "allowed_rule": "4N",
+        "verdict": "allowed",
+        "in_table_B": true,
+        "in_table_C_tc_gt_1K": true,
+        "in_table_D_epw": true
+      },
+      {
+        "mc3d_id": "mc3d-47615",
+        "formula": "MoN",
+        "sg_number": 225,
+        "sg_symbol": "Fm-3m",
+        "is_nonsymmorphic": false,
+        "nu": 49,
+        "allowed_rule": "2N",
+        "verdict": "odd_filling",
+        "in_table_B": true,
+        "in_table_C_tc_gt_1K": true,
+        "in_table_D_epw": true
+      },
+      {
+        "mc3d_id": "mc3d-8437",
+        "formula": "MoN",
+        "sg_number": 187,
+        "sg_symbol": "P-6m2",
+        "is_nonsymmorphic": false,
+        "nu": 49,
+        "allowed_rule": "2N",
+        "verdict": "odd_filling",
+        "in_table_B": true,
+        "in_table_C_tc_gt_1K": true,
+        "in_table_D_epw": true
+      }
+    ],
+    "mc3d_epw_symmetry_enforced_count": 180,
+    "secondary_3dsc_dataset": {
+      "dataset": "3DSC_MP (Sommer et al., Sci. Data 10, 816 (2023), https://github.com/aimat-lab/3DSC)",
+      "total_3dsc_mp_entries": 5773,
+      "unique_mp_host_structures": 2715,
+      "stoichiometric_ordered_entries": 2336,
+      "stoichiometric_superconductors_tc_gt_0": 1215,
+      "stoichiometric_all_verdict_counts": {
+        "allowed": 1345,
+        "odd_filling": 532,
+        "symmetry_enforced": 459
+      },
+      "stoichiometric_tc_gt_0_verdict_counts": {
+        "allowed": 646,
+        "odd_filling": 306,
+        "symmetry_enforced": 263
+      },
+      "stoichiometric_tc_gt_0_forced_gapless_count": 569,
+      "stoichiometric_tc_gt_0_forced_gapless_fraction": 0.4683,
+      "stoichiometric_tc_gt_0_symmetry_enforced_fraction": 0.2165,
+      "all_5773_host_lattice_verdict_counts": {
+        "allowed": 3064,
+        "odd_filling": 1660,
+        "symmetry_enforced": 1049
+      },
+      "tc_stats_by_verdict_stoich_tc_gt_0": {
+        "allowed": {
+          "count_tc_gt_0": 646,
+          "mean_tc_K": 5.52,
+          "median_tc_K": 2.56,
+          "iqr_25_K": 1.1,
+          "iqr_75_K": 5.3,
+          "max_tc_K": 95.0
+        },
+        "odd_filling": {
+          "count_tc_gt_0": 306,
+          "mean_tc_K": 7.19,
+          "median_tc_K": 3.01,
+          "iqr_25_K": 1.24,
+          "iqr_75_K": 6.11,
+          "max_tc_K": 132.0
+        },
+        "symmetry_enforced": {
+          "count_tc_gt_0": 263,
+          "mean_tc_K": 3.66,
+          "median_tc_K": 2.33,
+          "iqr_25_K": 1.4,
+          "iqr_75_K": 3.86,
+          "max_tc_K": 85.0
+        }
+      },
+      "nonmagnetic_nonsymmorphic_sc_count": 252,
+      "caveat": "Exploratory analysis; crystal chemistry and structural families correlate with space group."
+    },
+    "secondary_3dsc_mannwhitney_test_sym_vs_allowed_tc": {
+      "u_statistic": 80993.0,
+      "p_value": 0.270463
+    },
+    "caveat": "Exploratory analysis: for conventional s-wave pairing, nonsymmorphic symmetry does not force superconducting gap nodes, and crystal chemistry correlates with space group."
+  }
+}

@@ -1,0 +1,179 @@
+{
+  "task": "Design a dynamically stable, thermodynamically competitive nonmagnetic forced-gapless crystal with earth-abundant elements in a nonsymmorphic space group that survives symmetry-lowering distortions.",
+  "steps": [
+    {
+      "iteration": 1,
+      "proposal": "LiZnP in SG 129 (P4/nmm, 2 f.u./primitive cell)",
+      "tool_called": "can_be_insulator",
+      "tool_output": {
+        "can_be_insulator": true,
+        "verdict": "allowed",
+        "sg_number": 129,
+        "sg_symbol": "P4/nmm",
+        "primitive_formula": "Li2P2Zn2",
+        "num_primitive_atoms": 6,
+        "nu": 96,
+        "m_min": 2,
+        "allowed_generators": [
+          4,
+          8,
+          16,
+          32
+        ],
+        "allowed_rule": "4N",
+        "mode": "soc",
+        "symprec": 0.001,
+        "symprec_0_1_check": {
+          "sg_number": 129,
+          "sg_symbol": "P4/nmm",
+          "nu": 96,
+          "verdict": "allowed",
+          "symprec_sensitive": false,
+          "verdict_sensitive": false
+        },
+        "explanation": "Band insulator is symmetry-allowed (with SOC): primitive cell has nu=96 electrons in SG 129 (P4/nmm), which satisfies the allowed filling set 4N.",
+        "citation": "H. Watanabe, H. C. Po, M. P. Zaletel, and A. Vishwanath, Phys. Rev. Lett. 117, 096404 (2016) [arXiv:1603.05646]"
+      },
+      "decision": "REJECTED in 1 ms before any MLIP/DFT call: primitive cell has nu=96 electrons in SG 129 (P4/nmm), which satisfies 4N (verdict='allowed', band insulator is allowed)."
+    },
+    {
+      "iteration": 2,
+      "proposal": "NaZnSe in SG 129 (P4/nmm, 2 f.u./primitive cell)",
+      "tool_called": "can_be_insulator + robustness_score",
+      "tool_output": {
+        "can_be_insulator": {
+          "can_be_insulator": false,
+          "verdict": "symmetry_enforced",
+          "sg_number": 129,
+          "sg_symbol": "P4/nmm",
+          "primitive_formula": "Na2Se2Zn2",
+          "num_primitive_atoms": 6,
+          "nu": 150,
+          "m_min": 2,
+          "allowed_generators": [
+            4,
+            8,
+            16,
+            32
+          ],
+          "allowed_rule": "4N",
+          "mode": "soc",
+          "symprec": 0.001,
+          "symprec_0_1_check": {
+            "sg_number": 129,
+            "sg_symbol": "P4/nmm",
+            "nu": 150,
+            "verdict": "symmetry_enforced",
+            "symprec_sensitive": false,
+            "verdict_sensitive": false
+          },
+          "explanation": "Cannot be a nonmagnetic band insulator (with SOC): primitive cell has nu=150 electrons in SG 129 (P4/nmm), where band insulators require nu in 4N (filling-enforced metal or nodal semimetal).",
+          "citation": "H. Watanabe, H. C. Po, M. P. Zaletel, and A. Vishwanath, Phys. Rev. Lett. 117, 096404 (2016) [arXiv:1603.05646]"
+        },
+        "robustness_score": {
+          "primitive_formula": "Na2Se2Zn2",
+          "sg_number": 129,
+          "sg_symbol": "P4/nmm",
+          "nu": 150,
+          "verdict": "symmetry_enforced",
+          "allowed_rule": "4N",
+          "survives_k": 7,
+          "total_n": 10,
+          "robustness_fraction": 0.7,
+          "t_subgroups_surviving": 5,
+          "t_subgroups_total": 7,
+          "k_subgroups_surviving": 2,
+          "k_subgroups_total": 3,
+          "surviving_subgroups": [
+            "SG 59 (Pmmn, 4N)",
+            "SG 67 (Cmme, 4N)",
+            "SG 85 (P4/n, 4N)",
+            "SG 90 (P4212, 4N)",
+            "SG 113 (P-421m, 4N)",
+            "SG 130 (P4/ncc, 8N)",
+            "SG 138 (P42/ncm, 8N)"
+          ],
+          "gapping_subgroups": [
+            "SG 99 (P4mm, 2N)",
+            "SG 115 (P-4m2, 2N)",
+            "SG 137 (P42/nmc, 4N)"
+          ],
+          "summary": "survives 7 of 10 maximal symmetry-breaking distortions (t-subgroups: 5/7, k-subgroups: 2/3)",
+          "citation": "H. Watanabe, H. C. Po, M. P. Zaletel, and A. Vishwanath, Phys. Rev. Lett. 117, 096404 (2016) [arXiv:1603.05646]"
+        }
+      },
+      "decision": "PARTIAL PASS: nu=150 in SG 129 is symmetry_enforced gapless (not in 4N), but `robustness_score` shows it survives 7 of 10 maximal symmetry-breaking distortions (t-subgroups: 5/7, k-subgroups: 2/3). Agent pivots to SG 62 (Pnma, S_62 = 8N) where noncentrosymmetric subgroups SG 19 (P2_12_12_1) and SG 33 (Pna2_1) preserve S_G' = 8N."
+    },
+    {
+      "iteration": 3,
+      "proposal": "CaZnCu in SG 62 (Pnma, TiNiSi-type, 4 f.u./primitive cell)",
+      "tool_called": "can_be_insulator + robustness_score + relax_and_stability",
+      "tool_output": {
+        "can_be_insulator": {
+          "can_be_insulator": false,
+          "verdict": "symmetry_enforced",
+          "sg_number": 62,
+          "sg_symbol": "Pnma",
+          "primitive_formula": "Ca4Cu4Zn4",
+          "num_primitive_atoms": 12,
+          "nu": 316,
+          "m_min": 4,
+          "allowed_generators": [
+            8,
+            16
+          ],
+          "allowed_rule": "8N",
+          "mode": "soc",
+          "symprec": 0.001,
+          "symprec_0_1_check": {
+            "sg_number": 62,
+            "sg_symbol": "Pnma",
+            "nu": 316,
+            "verdict": "symmetry_enforced",
+            "symprec_sensitive": false,
+            "verdict_sensitive": false
+          },
+          "explanation": "Cannot be a nonmagnetic band insulator (with SOC): primitive cell has nu=316 electrons in SG 62 (Pnma), where band insulators require nu in 8N (filling-enforced metal or nodal semimetal).",
+          "citation": "H. Watanabe, H. C. Po, M. P. Zaletel, and A. Vishwanath, Phys. Rev. Lett. 117, 096404 (2016) [arXiv:1603.05646]"
+        },
+        "robustness_score": {
+          "primitive_formula": "Ca4Cu4Zn4",
+          "sg_number": 62,
+          "sg_symbol": "Pnma",
+          "nu": 316,
+          "verdict": "symmetry_enforced",
+          "allowed_rule": "8N",
+          "survives_k": 2,
+          "total_n": 7,
+          "robustness_fraction": 0.2857,
+          "t_subgroups_surviving": 2,
+          "t_subgroups_total": 7,
+          "k_subgroups_surviving": 0,
+          "k_subgroups_total": 0,
+          "surviving_subgroups": [
+            "SG 19 (P212121, 8N)",
+            "SG 33 (Pna21, 8N)"
+          ],
+          "gapping_subgroups": [
+            "SG 11 (P21/m, 4N)",
+            "SG 14 (P21/c, 4N)",
+            "SG 14 (P21/c, 4N)",
+            "SG 26 (Pmc21, 4N)",
+            "SG 31 (Pmn21, 4N)"
+          ],
+          "summary": "survives 2 of 7 maximal symmetry-breaking distortions (t-subgroups: 2/7, k-subgroups: 0/0)",
+          "citation": "H. Watanabe, H. C. Po, M. P. Zaletel, and A. Vishwanath, Phys. Rev. Lett. 117, 096404 (2016) [arXiv:1603.05646]"
+        },
+        "relax_and_stability": {
+          "candidate_id": "CaZnCu_SG62",
+          "sg_preserved": true,
+          "ehull_mlip_eV_atom": 0.0,
+          "min_freq_bz_THz": -0.0,
+          "dynamically_stable": true,
+          "soft_mode_isotropy_survival": "2/4"
+        }
+      },
+      "decision": "ACCEPTED: CaZnCu (SG 62 Pnma) has nu=316 == 4 mod 8 (symmetry_enforced gapless, not in 8N), survives 2 of 7 maximal symmetry-breaking distortions (t-subgroups: 2/7, k-subgroups: 0/0), MLIP hull distance = 0.0000 eV/atom, and is dynamically stable (min phonon frequency = -0.00 THz)."
+    }
+  ]
+}

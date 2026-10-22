@@ -1,0 +1,4 @@
+label,sg_number,sg_symbol,nu,allowed_rule,verdict,ehull_mlip_eV_atom,energy_mpa0_eV_atom,min_freq_bz_THz,dynamically_stable,subgroup_robustness
+NaZnS_P4nmm,129,P4/nmm,114,4N,symmetry_enforced,0.3876,-2.65646,-6.5429,False,7/10
+KZnS_P4nmm,129,P4/nmm,130,4N,symmetry_enforced,0.4133,-2.64217,-5.9869,False,7/10
+CaZnCu_Pnma_gen,62,Pnma,316,8N,symmetry_enforced,0.0473,-2.58523,-0.0,True,2/7

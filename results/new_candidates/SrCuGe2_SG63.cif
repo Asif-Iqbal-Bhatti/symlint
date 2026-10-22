@@ -1,0 +1,33 @@
+data_image0
+_chemical_formula_structural       Sr2Cu2Ge4
+_chemical_formula_sum              "Sr2 Cu2 Ge4"
+_cell_length_a       9.253385243871348
+_cell_length_b       9.253385243871348
+_cell_length_c       4.226327839298822
+_cell_angle_alpha    90.0
+_cell_angle_beta     90.0
+_cell_angle_gamma    151.97123163783561
+
+_space_group_name_H-M_alt    "P 1"
+_space_group_IT_number       1
+
+loop_
+  _space_group_symop_operation_xyz
+  'x, y, z'
+
+loop_
+  _atom_site_type_symbol
+  _atom_site_label
+  _atom_site_symmetry_multiplicity
+  _atom_site_fract_x
+  _atom_site_fract_y
+  _atom_site_fract_z
+  _atom_site_occupancy
+  Sr  Sr1       1.0  0.6066379239301793  0.39336207606982104  0.7500000000000002  1.0000
+  Sr  Sr2       1.0  0.3933620760698208  0.6066379239301795  0.24999999999999994  1.0000
+  Cu  Cu1       1.0  0.8239461879859884  0.17605381201401202  0.7500000000000002  1.0000
+  Cu  Cu2       1.0  0.17605381201401188  0.8239461879859885  0.24999999999999994  1.0000
+  Ge  Ge1       1.0  0.7488397794085987  0.25116022059140175  0.24999999999999994  1.0000
+  Ge  Ge2       1.0  0.0394361803809555  0.9605638196190452  0.24999999999999994  1.0000
+  Ge  Ge3       1.0  0.2511602205914016  0.7488397794085988  0.7500000000000002  1.0000
+  Ge  Ge4       1.0  0.9605638196190449  0.03943618038095546  0.7500000000000002  1.0000
