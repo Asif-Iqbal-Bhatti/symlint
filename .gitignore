@@ -13,3 +13,8 @@ data/3dsc_mp/data/final/MP/cifs/
 data/dft_2d_cache.json
 data/mc3d_supercon/mc3d_structures_cache.json
 
+data/
+.venv/
+*.aux
+*.log
+*.out

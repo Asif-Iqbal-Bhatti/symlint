@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>symlint</title>
+<meta name="description" content="An exact symmetry check that tells AI models, in milliseconds and without DFT, when a crystal cannot be an insulator.">
+<meta property="og:title" content="symlint: a physics guardrail for AI driven materials discovery">
+<meta property="og:description" content="An exact symmetry check that tells AI models, in milliseconds and without DFT, when a crystal cannot be an insulator.">
+<meta property="og:image" content="https://asif-iqbal-bhatti.github.io/symlint/assets/cover.png">
+<style>
+  :root {
+    --bg: #ffffff; --surface: #f5f7fa; --border: #d0d7de;
+    --ink: #1f2937; --muted: #6b7280; --accent: #0c2d57; --link: #1d4ed8;
+    --warn: #b4410f; --code-bg: #111827; --code-ink: #e5e7eb;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #0b1220; --surface: #111a2e; --border: #263247;
+      --ink: #e5e7eb; --muted: #9ca3af; --accent: #93c5fd; --link: #93c5fd;
+      --warn: #fca5a5; --code-bg: #050a14; --code-ink: #e5e7eb;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; background: var(--bg); color: var(--ink);
+    font: 17px/1.6 system-ui, -apple-system, "Segoe UI", Helvetica, Arial, sans-serif;
+  }
+  .wrap { max-width: 920px; margin: 0 auto; padding: 0 16px; }
+  header { border-top: 6px solid var(--accent); padding: 56px 0 32px; }
+  h1 { font-size: clamp(44px, 9vw, 72px); line-height: 1; margin: 0 0 12px; color: var(--accent); letter-spacing: -1px; }
+  .tagline { font-size: clamp(20px, 3.4vw, 26px); margin: 0 0 8px; }
+  .lede { color: var(--muted); margin: 0 0 24px; max-width: 680px; }
+  .buttons { display: flex; flex-wrap: wrap; gap: 10px; }
+  .btn { display: inline-block; padding: 10px 18px; border-radius: 8px; font-weight: 600; text-decoration: none;
+         border: 1px solid var(--accent); color: var(--accent); }
+  .btn.primary { background: var(--accent); color: var(--bg); }
+  h2 { font-size: 26px; color: var(--accent); margin: 48px 0 12px; }
+  a { color: var(--link); }
+  .card { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 18px 20px; }
+  .rule { display: grid; grid-template-columns: 1fr auto 1fr; gap: 16px; align-items: center; }
+  .rule .arrow { font-size: 28px; color: var(--muted); }
+  .rule .verdict { color: var(--warn); font-weight: 700; }
+  @media (max-width: 640px) { .rule { grid-template-columns: 1fr; } .rule .arrow { transform: rotate(90deg); justify-self: start; } }
+  table { width: 100%; border-collapse: collapse; margin: 8px 0; }
+  th, td { text-align: left; padding: 8px 10px; border-bottom: 1px solid var(--border); vertical-align: top; }
+  th { color: var(--muted); font-weight: 600; font-size: 15px; }
+  code { font-family: ui-monospace, "SFMono-Regular", Consolas, monospace; font-size: 0.92em; }
+  pre { background: var(--code-bg); color: var(--code-ink); padding: 14px 16px; border-radius: 8px; overflow-x: auto; font-size: 14px; line-height: 1.5; }
+  pre .cmd { color: #93c5fd; }
+  pre .hl { color: #fca5a5; }
+  .stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 12px; }
+  .stat .num { font-size: 32px; font-weight: 800; color: var(--accent); line-height: 1.1; }
+  .stat .lbl { color: var(--muted); font-size: 15px; margin-top: 6px; }
+  figure { margin: 20px 0 0; }
+  figure img { width: 100%; height: auto; border: 1px solid var(--border); border-radius: 8px; background: #fff; }
+  figcaption { color: var(--muted); font-size: 14px; margin-top: 6px; }
+  .note { color: var(--muted); font-size: 15px; }
+  ul.scope li { margin-bottom: 6px; }
+  footer { margin: 56px 0 40px; padding-top: 16px; border-top: 1px solid var(--border); color: var(--muted); font-size: 14px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <h1>symlint</h1>
+  <p class="tagline">A physics guardrail for AI driven materials discovery</p>
+  <p class="lede">An exact symmetry check that tells databases, ML models, generative design and AI agents, in milliseconds and without DFT, when a crystal cannot be an insulator.</p>
+  <div class="buttons">
+    <a class="btn primary" href="https://github.com/Asif-Iqbal-Bhatti/symlint">View on GitHub</a>
+    <a class="btn" href="#install">Install</a>
+    <a class="btn" href="https://github.com/Asif-Iqbal-Bhatti/symlint/blob/main/docs/RESULTS.md">Full results</a>
+  </div>
+</header>
+
+<section>
+  <h2>The rule</h2>
+  <p>Watanabe, Po, Zaletel and Vishwanath (<a href="https://arxiv.org/abs/1603.05646">Phys. Rev. Lett. 117, 096404, 2016</a>) proved that for a nonmagnetic crystal, the space group and the number of electrons per primitive cell, &nu; = &Sigma; Z<sub>i</sub>, decide whether a band insulator is possible at all. symlint implements this for all 230 space groups and needs only the structure.</p>
+  <div class="card rule">
+    <div><strong>SrIrO<sub>3</sub>, space group <em>Pnma</em></strong><br>&nu; = 556 electrons per primitive cell</div>
+    <div class="arrow" aria-hidden="true">&rarr;</div>
+    <div><em>Pnma</em> allows insulators only at &nu; &isin; 8&#8469;<br><span class="verdict">556 &equiv; 4 (mod 8): cannot be a band insulator</span></div>
+  </div>
+  <table>
+    <tr><th>Verdict</th><th>Meaning</th></tr>
+    <tr><td><code>allowed</code></td><td>&nu; is in the allowed set: a band insulator is possible (not guaranteed)</td></tr>
+    <tr><td><code>odd_filling</code></td><td>&nu; is odd: cannot be a nonmagnetic band insulator</td></tr>
+    <tr><td><code>symmetry_enforced</code></td><td>&nu; is even but not allowed: forced gapless by nonsymmorphic symmetry (metal or nodal semimetal)</td></tr>
+  </table>
+</section>
+
+<section>
+  <h2>One structure in, one exact verdict out</h2>
+<pre><span class="cmd">$ symlint check tests/data/SrIrO3_Pnma_mp1105160.cif</span>
+Space group:           Pnma (#62) [symprec=0.001]
+Electron count (nu):   556
+Allowed set S_G (soc): 8N
+<span class="hl">Verdict:               symmetry_enforced (can_be_insulator=False)</span>
+Tolerance check (0.1): SG #62 (Pnma), nu=556, verdict=symmetry_enforced, sensitive=False</pre>
+  <p class="note">Median time 1.7 ms per structure. Also available as a Python API, an MCP tool for LLM agents and a marimo app.</p>
+</section>
+
+<section>
+  <h2>What it finds</h2>
+  <div class="stats">
+    <div class="card stat"><div class="num">4,079</div><div class="lbl">forced gapless candidates among 93,902 JARVIS entries; 992 entries flagged for curation</div></div>
+    <div class="card stat"><div class="num">27.0%</div><div class="lbl">of 463 held out structures where a gap is forbidden get one from ALIGNN 2.0</div></div>
+    <div class="card stat"><div class="num">41% vs 32%</div><div class="lbl">superconductor screen pass rate, forced gapless vs allowed metals (MC3D)</div></div>
+    <div class="card stat"><div class="num">11 of 14</div><div class="lbl">designed crystals dynamically stable in both MACE and GRACE</div></div>
+  </div>
+  <figure>
+    <img src="assets/summary_figure.png" alt="Four panels: JARVIS gap distribution by verdict, ALIGNN violation rates, MC3D superconductor pass rate by verdict, MACE versus GRACE lowest phonon frequency" loading="lazy">
+    <figcaption>(a) JARVIS census by verdict. (b) ALIGNN 2.0 predicted gaps where the theorem forbids one. (c) MC3D metals reaching T<sub>c</sub> &gt; 1 K, by verdict. (d) Lowest phonon frequency from MACE vs GRACE.</figcaption>
+  </figure>
+</section>
+
+<section id="install">
+  <h2>Install and use</h2>
+<pre><span class="cmd">git clone https://github.com/Asif-Iqbal-Bhatti/symlint.git
+cd symlint
+pip install -e .</span>
+
+symlint check my_structure.cif        # any format ASE can read
+symlint mcp                           # MCP server for AI agents
+marimo run notebooks/demo.py          # browser app (pip install -e ".[demo]")</pre>
+<pre><span class="cmd">from symlint import check_file, classify_filling</span>
+
+res = check_file("my_structure.cif")
+print(res["verdict"], res["explanation"])
+print(classify_filling(nu=316, sg_number=62))   # 'symmetry_enforced'</pre>
+  <p class="note">More in <a href="https://github.com/Asif-Iqbal-Bhatti/symlint/tree/main/examples">examples/</a>: screening a folder of structures, constraining any band gap model, connecting an LLM agent.</p>
+</section>
+
+<section>
+  <h2>Scope</h2>
+  <ul class="scope">
+    <li>Valid for nonmagnetic, weakly correlated band theory. Magnetic structures are reported separately, never as violations.</li>
+    <li>A forbidden filling means the crystal <em>cannot be a band insulator</em>. It does not prove a topological material; that needs DFT with spin-orbit coupling and irrep analysis.</li>
+    <li>MLIP stability is a screening estimate and needs DFT confirmation.</li>
+    <li>Next: the same census on Materials Project and Alexandria, the 1,651 magnetic space groups, 2D layer groups.</li>
+  </ul>
+</section>
+
+<footer>
+  Asif Iqbal Bhatti &middot; 4th Open Scientific Intelligence Hackathon 2026 &middot; MIT License &middot;
+  <a href="https://github.com/Asif-Iqbal-Bhatti/symlint">github.com/Asif-Iqbal-Bhatti/symlint</a><br>
+  Please cite: H. Watanabe, H. C. Po, M. P. Zaletel, A. Vishwanath, Phys. Rev. Lett. 117, 096404 (2016).
+</footer>
+
+</div>
+</body>
+</html>

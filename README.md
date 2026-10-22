@@ -2,6 +2,8 @@
 
 **A physics guardrail for AI driven materials discovery.** symlint tells databases, ML models, generative design and AI agents, in milliseconds and without DFT, when a crystal cannot be a band insulator, and turns that into shortlists of semimetals and superconductor candidates.
 
+**Website:** https://asif-iqbal-bhatti.github.io/symlint/
+
 ![symlint results overview](results/summary_figure.png)
 
 *Submitted to the 4th Open Scientific Intelligence (OSI) Hackathon 2026 by Asif Iqbal Bhatti. Every number in this repository comes from a file in [`results/`](results/).*
